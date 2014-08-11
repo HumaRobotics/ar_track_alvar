@@ -23,7 +23,7 @@ find_package(Eigen REQUIRED)
 find_package(OpenCV REQUIRED)
 
 find_package(PkgConfig)
-pkg_check_modules(PC_LIBOPENNI REQUIRED tinyxml)
+pkg_check_modules(PC_LIBOPENNI REQUIRED tinyxml2)
 
 # generate messages
 set(MSG_FILES AlvarMarker.msg AlvarMarkers.msg)
@@ -86,7 +86,7 @@ add_library(ar_track_alvar
     src/MultiMarker.cpp
     src/MultiMarkerBundle.cpp
     src/MultiMarkerInitializer.cpp)
-target_link_libraries(ar_track_alvar ${OpenCV_LIBS} tinyxml ${catkin_LIBRARIES})
+target_link_libraries(ar_track_alvar ${OpenCV_LIBS} tinyxml2 ${catkin_LIBRARIES})
 
 # Kinect filtering code
 add_library(kinect_filtering src/kinect_filtering.cpp)
